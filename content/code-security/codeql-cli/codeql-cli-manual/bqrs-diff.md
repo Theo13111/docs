@@ -1,6 +1,6 @@
 ---
 title: bqrs diff
-versions:
+versions: # DO NOT MANUALLY EDIT. CHANGES WILL BE OVERWRITTEN BY A 🤖
   fpt: '*'
   ghae: '*'
   ghec: '*'
@@ -24,7 +24,7 @@ redirect_from:
 
 ## Synopsis
 
-```shell{:copy}
+```shell copy
 codeql bqrs diff <options>... -- <file1> <file2>
 ```
 
@@ -32,9 +32,11 @@ codeql bqrs diff <options>... -- <file1> <file2>
 
 Compute the difference between two result sets.
 
-## Primary options
+## Options
 
-#### `<file1>`
+### Primary Options
+
+#### `<file1>` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] First BQRS file to compare.
 

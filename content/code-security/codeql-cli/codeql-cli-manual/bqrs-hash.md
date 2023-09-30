@@ -1,6 +1,6 @@
 ---
 title: bqrs hash
-versions:
+versions: # DO NOT MANUALLY EDIT. CHANGES WILL BE OVERWRITTEN BY A 🤖
   fpt: '*'
   ghae: '*'
   ghec: '*'
@@ -24,7 +24,7 @@ redirect_from:
 
 ## Synopsis
 
-```shell{:copy}
+```shell copy
 codeql bqrs hash <options>... -- <file>
 ```
 
@@ -32,9 +32,11 @@ codeql bqrs hash <options>... -- <file>
 
 \[Plumbing] Compute a stable hash of a BQRS file.
 
-## Primary options
+## Options
 
-#### `<file>`
+### Primary Options
+
+#### `<file>` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] BQRS file to hash.
 

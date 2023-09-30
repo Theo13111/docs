@@ -1,7 +1,7 @@
 ---
 title: diagnostic export
 intro: '[Experimental] Export diagnostic information for a failed analysis.'
-versions:
+versions: # DO NOT MANUALLY EDIT. CHANGES WILL BE OVERWRITTEN BY A 🤖
   fpt: '*'
   ghae: '*'
   ghec: '*'
@@ -24,7 +24,7 @@ redirect_from:
 
 ## Synopsis
 
-```shell{:copy}
+```shell copy
 codeql diagnostic export --format=<format> [--output=<output>] <options>...
 ```
 
@@ -34,9 +34,11 @@ codeql diagnostic export --format=<format> [--output=<output>] <options>...
 
 Available since `v2.12.6`.
 
-## Primary options
+## Options
 
-#### `--format=<format>`
+### Primary Options
+
+#### `--format=<format>` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] The format in which to write the results. One of:
 
@@ -74,9 +76,9 @@ languages or different parts of the code.
 If you analyze the same version of a code base in several different ways
 (e.g., for different languages) and upload the results to GitHub for
 presentation in Code Scanning, this value should differ between each of
-the analyses, which tells Code Scanning that the analyses *supplement*
-rather than *supersede* each other. (The values should be consistent
-between runs of the same analysis for *different* versions of the code
+the analyses, which tells Code Scanning that the analyses _supplement_
+rather than _supersede_ each other. (The values should be consistent
+between runs of the same analysis for _different_ versions of the code
 base.)
 
 This value will appear (with a trailing slash appended if not already

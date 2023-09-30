@@ -1,4 +1,4 @@
-import renderContent from '../../lib/render-content/index.js'
+import { renderContent } from '#src/content-render/index.js'
 
 const example = `
 \`\`\`yaml annotate
@@ -18,6 +18,8 @@ describe('annotate', () => {
     // We don't normally use snapshots,
     // but in this case its a short and concise example
     // that won't change regularly.
+    // If it fails, study the output and make sure it's correct.
+    // If it is indeed correct, run `jest --updateSnapshot` to update it.
     expect(await renderContent(example)).toMatchSnapshot()
   })
 })

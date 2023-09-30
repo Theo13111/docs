@@ -1,6 +1,6 @@
 ---
 title: database cleanup
-versions:
+versions: # DO NOT MANUALLY EDIT. CHANGES WILL BE OVERWRITTEN BY A 🤖
   fpt: '*'
   ghae: '*'
   ghec: '*'
@@ -24,7 +24,7 @@ redirect_from:
 
 ## Synopsis
 
-```shell{:copy}
+```shell copy
 codeql database cleanup [--mode=<mode>] <options>... -- <database>
 ```
 
@@ -35,9 +35,11 @@ Compact a CodeQL database on disk.
 Delete temporary data, and generally make a database as small as
 possible on disk without degrading its future usefulness.
 
-## Primary options
+## Options
 
-#### `<database>`
+### Primary Options
+
+#### `<database>` <!-- markdownlint-disable-line heading-increment -->
 
 \[Mandatory] Path to the CodeQL database to clean up.
 
@@ -77,7 +79,7 @@ Select how aggressively to trim the cache. Choices include:
 `brutal`: Remove the entire cache, trimming down to the state of a
 freshly extracted dataset
 
-`normal` *(default)*: Trim everything except explicitly "cached"
+`normal` _(default)_: Trim everything except explicitly "cached"
 predicates.
 
 `light`: Simply make sure the defined size limits for the disk cache are

@@ -1,6 +1,6 @@
 ---
 title: query format
-versions:
+versions: # DO NOT MANUALLY EDIT. CHANGES WILL BE OVERWRITTEN BY A 🤖
   fpt: '*'
   ghae: '*'
   ghec: '*'
@@ -24,7 +24,7 @@ redirect_from:
 
 ## Synopsis
 
-```shell{:copy}
+```shell copy
 codeql query format [--output=<file>] [--in-place] [--backup=<ext>] <options>... -- <file>...
 ```
 
@@ -32,9 +32,11 @@ codeql query format [--output=<file>] [--in-place] [--backup=<ext>] <options>...
 
 Autoformat QL source code.
 
-## Primary options
+## Options
 
-#### `<file>...`
+### Primary Options
+
+#### `<file>...` <!-- markdownlint-disable-line heading-increment -->
 
 One or more `.ql` or `.qll` source files to autoformat. A dash can be
 specified to read from standard input.
@@ -51,7 +53,7 @@ Overwrite each input file with a formatted version of its content.
 #### `--[no-]check-only`
 
 Instead of writing output, exit with status 1 if any input files
-*differ* from their correct formatting. A message telling which files
+_differ_ from their correct formatting. A message telling which files
 differed will be printed to standard error unless you also give `-qq`.
 
 #### `-b, --backup=<ext>`
