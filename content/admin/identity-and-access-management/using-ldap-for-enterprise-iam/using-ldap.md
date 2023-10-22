@@ -173,7 +173,7 @@ This has the potential to disclose sensitive organizational information to contr
 - The existence of specific LDAP Groups visible to the _Domain search user_.
 - Members of the LDAP group who have {% data variables.product.prodname_ghe_server %} user accounts, which is disclosed when creating a team synced with that LDAP group.
 
-If disclosing such information is not desired, your company or organization should restrict the permissions of the configured _Domain search user_ in the admin console. If such restriction isn't possible, contact {% data variables.contact.contact_ent_support %}.
+If disclosing such information is not desired, your company or organization should restrict the permissions of the configured _Domain search user_ in the admin console. If such restriction isn't possible, contact us by visiting {% data variables.contact.contact_ent_support %}.
 
 {% endwarning %}
 
@@ -222,4 +222,4 @@ If LDAP Sync is **not** enabled, you must manually suspend the {% data variables
 
 ## About logging for LDAP
 
-Log events for LDAP appear in systemd journal logs on {% data variables.location.product_location %}. You'll find events related to LDAP operations in the logs for `github-unicorn` and `github-resqued`. For more information, see "[AUTOTITLE](/admin/monitoring-managing-and-updating-your-instance/monitoring-your-appliance/about-system-logs#journal-logs-for-the-github-application)."
+Log events for LDAP appear in {% ifversion opentelemetry-and-otel-log-migration-phase-1 %}systemd journal logs{% else %}log files{% endif %} on {% data variables.location.product_location %}. You'll find events related to LDAP operations in {% ifversion opentelemetry-and-otel-log-migration-phase-1 %}the logs for `github-unicorn` and `github-resqued`{% else %}`auth.log`, `ldap-sync.log`, and `ldap.log`{% endif %}. For more information, see "[AUTOTITLE](/admin/monitoring-managing-and-updating-your-instance/monitoring-your-appliance/about-system-logs#{% ifversion opentelemetry-and-otel-log-migration-phase-1 %}journal-logs-for-the-github-application{% else %}log-files-for-authentication{% endif %})."

@@ -62,7 +62,7 @@ This utility can help identify whether the Aqueduct server is having problems pr
 - Webhooks are not being triggered.
 - The web interface is not updating after a Git push.
 
-If you suspect Aqueduct is failing, contact {% data variables.contact.contact_ent_support %} for help.
+If you suspect Aqueduct is failing, visit {% data variables.contact.contact_ent_support %} for help.
 
 With this command, you can also pause or resume jobs in the queue.
 
@@ -404,10 +404,10 @@ stop/waiting
 
 ### ghe-set-password
 
-With `ghe-set-password`, you can set a new password to authenticate into the [{% data variables.enterprise.management_console %}](/admin/configuration/administering-your-instance-from-the-management-console).
+This utility allows you to set a new {% ifversion enterprise-management-console-multi-user-auth %}root site administrator {% endif %}password for authentication to the {% data variables.enterprise.management_console %}. For more information, see "[AUTOTITLE](/admin/administering-your-instance/administering-your-instance-from-the-web-ui/managing-access-to-the-management-console)."
 
 ```shell
-ghe-set-password <new_password>
+ghe-set-password
 ```
 
 ### ghe-setup-network
@@ -531,7 +531,7 @@ This utility allows you to update an SSL certificate for {% data variables.locat
 For more information about this command or for additional options, use the `-h` flag.
 
 ```shell
-ghe-ssl-certificate-setup
+/usr/local/share/enterprise/ghe-ssl-certificate-setup
 ```
 
 ### ghe-ssl-generate-csr
