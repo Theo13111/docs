@@ -28,12 +28,12 @@ If a contributor bypasses a push protection block for a secret, {% data variable
 - adds the bypass event to the audit log.{% ifversion secret-scanning-push-protection-email %}
 - sends an email alert to organization or personal account owners, security managers, and repository administrators who are watching the repository, with a link to the secret and the reason why it was allowed.{% endif %}
 
-{% ifversion ghec or fpt %}
-{% note %}
+{% data reusables.secret-scanning.bypass-reasons-and-alerts %}
 
-**Note:** The github.dev web-based editor doesn't support push protection. For more information about the editor, see "[AUTOTITLE](/codespaces/the-githubdev-web-based-editor)."
+{% ifversion secret-scanning-bypass-filter %}
 
-{% endnote %}
+On the {% data variables.product.prodname_secret_scanning %} alerts page for a repository or organization, you can apply the `bypassed:true` filter to easily see which alerts are the result of a user bypassing push protection.
+
 {% endif %}
 
 You can monitor security alerts to discover when users are bypassing push protections and creating alerts. For more information, see "[AUTOTITLE](/code-security/getting-started/auditing-security-alerts)."
@@ -42,9 +42,15 @@ You can monitor security alerts to discover when users are bypassing push protec
 If you are an organization owner or security manager, you can view metrics on how push protection is performing across your organization. For more information, see "[AUTOTITLE](/code-security/security-overview/viewing-metrics-for-secret-scanning-push-protection-in-your-organization)."
 {% endif %}
 
-{% data reusables.secret-scanning.bypass-reasons-and-alerts %}
-
 For information on the secrets and service providers supported for push protection, see "[AUTOTITLE](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets)."
+
+{% ifversion ghec or fpt %}
+{% note %}
+
+**Note:** The github.dev web-based editor doesn't support push protection. For more information about the editor, see "[AUTOTITLE](/codespaces/the-githubdev-web-based-editor)."
+
+{% endnote %}
+{% endif %}
 
 {% ifversion secret-scanning-push-protection-for-users %}
 
@@ -115,7 +121,7 @@ You can enable {% data variables.product.prodname_secret_scanning %} as a push p
 
 {% data reusables.secret-scanning.push-protection-enterprise-note %}
 
-Before enabling push protection for a custom pattern at enterprise level, you must also{% ifversion secret-scanning-custom-enterprise-36 or custom-pattern-dry-run-ga %} test your custom patterns using dry runs. {% data reusables.secret-scanning.dry-runs-enterprise-permissions %}{% else %} test your custom patterns in a repository before defining them for your entire enterprise, as there is no dry-run functionality. That way, you can avoid creating excess false-positive {% data variables.secret-scanning.alerts %}.{% endif %}
+Before enabling push protection for a custom pattern at enterprise level, you must also{% ifversion custom-pattern-dry-run-ga %} test your custom patterns using dry runs. {% data reusables.secret-scanning.dry-runs-enterprise-permissions %}{% else %} test your custom patterns in a repository before defining them for your entire enterprise, as there is no dry-run functionality. That way, you can avoid creating excess false-positive {% data variables.secret-scanning.alerts %}.{% endif %}
 
 {% data reusables.enterprise-accounts.access-enterprise %}
 {% data reusables.enterprise-accounts.policies-tab %}{% ifversion security-feature-enablement-policies %}
@@ -124,7 +130,7 @@ Before enabling push protection for a custom pattern at enterprise level, you mu
 {% data reusables.enterprise-accounts.advanced-security-policies %}
 {% data reusables.enterprise-accounts.advanced-security-security-features %}{% endif %}
 {% data reusables.advanced-security.secret-scanning-edit-custom-pattern %}
-{% ifversion secret-scanning-custom-enterprise-36 or custom-pattern-dry-run-ga %}
+{% ifversion custom-pattern-dry-run-ga %}
    {% note %}
 
    **Note**: At the enterprise level, you can only edit and enable push protection for custom patterns that you created.
